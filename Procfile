@@ -1,1 +1,1 @@
-web: gunicorn strava.wsgi
+web: gunicorn strava.wsgi --log-file -
