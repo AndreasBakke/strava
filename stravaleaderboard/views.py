@@ -14,7 +14,7 @@ def index(request):
     last_updates = club_name_list[0].last_update
     dato = datetime.datetime.today()
     t = int(time.time())
-    deltaT = t-last_updates
+    deltaT = int(t-last_updates/60)
     startdate = datetime.datetime(2021, 1, 4)#update to 11 when publishing
     for i in range(1,11):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
