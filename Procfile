@@ -1,1 +1,1 @@
-web: gunicorn strava.wsgi.py
+web: gunicorn strava.wsgi
