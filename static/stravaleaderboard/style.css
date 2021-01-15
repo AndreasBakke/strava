@@ -29,3 +29,7 @@ th{
 #return {
     text-align: center;
 }
+
+#omegalogo{
+    background-image: white url("images/omega.png")
+}

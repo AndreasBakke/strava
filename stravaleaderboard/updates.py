@@ -84,7 +84,7 @@ def update():
         updatetime = club_name_list[0].last_update
 
 
-    if (t-updatetime)>360:
+    if (t-updatetime)>900:
         exchange_credentials()
         Create_check_Clubs() 
         update_distances()
