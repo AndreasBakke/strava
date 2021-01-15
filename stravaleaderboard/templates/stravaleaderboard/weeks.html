@@ -1,0 +1,21 @@
+{% if club %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'stravaleaderboard/style.css' %}">
+    <h1>Weekly results for {{ club.name }}</h1>
+    <table>
+        <tr>
+            <th>Week</th>
+            <th>Distance</th>
+        </tr>
+    {% for distance in club.distances_set.all|dictsort:"week" %}
+        <tr>
+            <td>Week {{  distance.week  }}</td>
+            <td>{{ distance.distance }} km</td>
+        </tr>
+                {% endfor %}
+    </table>
+    <p id="return"><a href="/stravaleaderboard/">Return</a></p>
+{% else %}
+    <p>No results are available.</p>
+    <p id="return"><a href="/stravaleaderboard/">Return</a></p>
+{% endif %}

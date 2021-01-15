@@ -1,0 +1,31 @@
+{% load leaderboard_extras %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'stravaleaderboard/style.css' %}">
+{% if club_name_list %}
+    <h1>Welcome to the Omega - Nordic StravaChallenge</h1>
+    <table>
+        <tr>
+            <th>Club</th>
+            <th>Distance this week</th>
+            <th>Total Distance</th>
+            <th></th>
+        </tr>
+    {% for club in club_name_list %}
+        <tr> 
+            <td>{{ club.name }}</td>
+            {% for dist in club.distances_set.all %}
+                {% if dist.week ==  current_week  %}
+                <td>{{ dist.distance }}</td>
+                {% endif %}
+            {% endfor %}
+
+            </td>
+            <td>{{ club.total_distance }}</td>
+            <td><a href="/stravaleaderboard/{{ club.name }}/"> Weekly overview </a></td>
+        </tr>
+    {% endfor %}
+    </table>
+    <p id="return">Last Updated:  {{ last_update }} </p>
+{% else %}
+    <p>No clubs are available.</p>
+{% endif %}
