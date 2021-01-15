@@ -6,3 +6,4 @@ django_heroku
 setuptools
 requests
 datetime
+os
