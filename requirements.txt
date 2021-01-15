@@ -5,5 +5,3 @@ django_heroku
 setuptools
 requests
 datetime
-time
-decimal
