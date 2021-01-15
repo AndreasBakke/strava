@@ -1,0 +1,31 @@
+html {
+	width: 100%;
+	font-family: 'verdana', sans-serif;
+}
+h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+table{
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+td, th {
+    border: 1px solid rgba(121, 121, 121, 0.73);
+    padding: 8px;
+    text-align: center;
+}
+
+th{
+    background-color: #dfdfdf;
+}
+
+#return {
+    text-align: center;
+}
