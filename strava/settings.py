@@ -33,14 +33,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-  #  'stravaleaderboard.apps.StravaleaderboardConfig',
+    'stravaleaderboard.apps.StravaleaderboardConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'stravaleaderboard'
+    #'stravaleaderboard'
 ]
 
 MIDDLEWARE = [
