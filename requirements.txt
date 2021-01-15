@@ -1,6 +1,7 @@
 psycopg2
 gunicorn
 django
+django_heroku
 setuptools
 requests
 
