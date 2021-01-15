@@ -1,4 +1,7 @@
 {% if club %}
+<head>
+    <title>{{ club.name }}</title>
+</head>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'stravaleaderboard/style.css' %}">
     <h1>Weekly results for {{ club.name }}</h1>
