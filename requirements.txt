@@ -4,5 +4,7 @@ django
 django_heroku
 setuptools
 requests
-
+json
 datetime
+time
+decimal
