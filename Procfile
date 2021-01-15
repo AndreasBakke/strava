@@ -1,1 +1,1 @@
-web: gunicorn strava:application --log-file -
+web: gunicorn strava.wsgi:application
