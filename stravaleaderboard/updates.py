@@ -13,7 +13,6 @@ def exchange_credentials():
     #auth_url = "https://www.strava.com/api/v3/oauth/token"
     #req= requests.post(auth_url, data=payload).json()
     #req = requests.post("https://www.strava.com/oauth/token?client_id={}&client_secret={}&grant_type=refresh_token&refresh_token={}".format(a.client_id, a.client_secret, a.refresh_token)).json()
-    print(req)
     #update:
     a.access_token = req['access_token']
     a.refresh_token = req['refresh_token']
@@ -76,10 +75,17 @@ def update():
 
     t = int(time.time())
     club_name_list = Club.objects.all()
-    updatetime = club_name_list[0].last_update
+    try:
+        updatetime = club_name_list[0].last_update
+    except:
+        exchange_credentials()
+        Create_check_Clubs() 
+        update_distances()
+
+
     if (t-updatetime)>360:
         exchange_credentials()
-        Create_check_Clubs()
+        Create_check_Clubs() 
         update_distances()
 
     
