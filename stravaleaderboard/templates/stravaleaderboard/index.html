@@ -7,14 +7,26 @@
 <link rel="stylesheet" type="text/css" href="{% static 'stravaleaderboard/style.css' %}">
 {% if club_name_list %}
     
-<div style="width: 100%;">
-<img src="/static/stravaleaderboard/images/omega.png" id="omegaLogo">
-    <div style="display: inline-block; width: 50%; margin: 0 auto;"><h1 id="title">Around the world challenge</h1>
-        <h2>Nordic vs Omega</h2></div>
-    
-</div>
+<table  id="titlebar">
+    <tr class="tableElmt">
+        <td class="tableElmt" style="width: 25%;"><img src="/static/stravaleaderboard/images/omega.png" id="omegaLogo" class="logo"></td>
+        <td class="tableElmt" style="width: 50%;">
+            <table class="tableElmt" style="width: 100%;">
+                <tr class="tableElmt">
+                    <td class="tableElmt"><h1 id="title">Around the world challenge</h1></td>
+                </tr >
+                <tr>
+                    <td class="tableElmt"><h2>Sct. Omega Broderskap & Nordic Semiconductor</h2></td>
 
-    <table>
+                </tr>
+            </table>
+        </td>
+        <td class="tableElmt" style="width:25%"><img src="/static/stravaleaderboard/images/Nordic.png" id="nordicLogo" class="logo"></td>
+    </tr>
+</table>
+<hr style="color: rgba(rgba(179, 179, 179, 0.726)); width: 70%; margin-top: 15px;">
+
+    <table style="margin-top: 20px;">
         <tr>
             <th>Club</th>
             <th>Distance this week</th>

@@ -5,8 +5,15 @@ html {
 	padding: 0;
 	font-family: 'droid-sans', arial, sans-seriff;
 }
+
+h1 {
+ text-align: center;
+ font-size: 30px;
+ font-family: 'Source Code Pro', monospace;
+}
+
 #title {
-    font-size: 20px;
+    font-size: 30px;
 
     margin: 0 auto;
     font-family: 'Source Code Pro', monospace;
@@ -15,10 +22,13 @@ html {
     width:100%;
 }
 
+
+
 h2{
     text-align: center;
-    font-size: 12px;
+    font-size: 18px;
     margin-top: 5px;
+    margin: 5px;
 
 }
 
@@ -28,7 +38,13 @@ table{
     margin: 0 auto;
     border: 1px solid black;
     border-collapse: collapse;
+    border-radius: 25px;
 
+}
+
+.tableelmt {
+    border: 0;
+    padding: 0;
 }
 
 td, th {
@@ -45,7 +61,14 @@ th{
     text-align: center;
 }
 
-#omegalogo{
-    width: 8%;
-    display: inline;
+.logo{
+    display: inline-block;
+    width: 30%;
+}
+
+#titlebar {
+    width: 70%;
+    border: 0;
+    margin: 0 auto;
+    height: 100px;
 }
