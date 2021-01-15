@@ -2,6 +2,7 @@ psycopg2
 dj-database-url
 gunicorn
 django
+dj_static
 django_heroku
 setuptools
 requests
