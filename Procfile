@@ -1,1 +1,1 @@
-web: gunicorn strava.wsgi:application
+web: gunicorn strava.wsgi:application - p $PORT
