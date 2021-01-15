@@ -1,12 +1,13 @@
 {% load leaderboard_extras %}
 {% load static %}
 <head>
-    <title>StravaLeaderboard</title>
+    <title>StravaLeaderboard</title><link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'stravaleaderboard/style.css' %}">
 {% if club_name_list %}
 <img src="/static/stravaleaderboard/images/omega.png" id="omegaLogo">
-    <h1>Welcome to the Omega - Nordic StravaChallenge</h1>
+    <h1 id="title">Welcome to the Omega - Nordic StravaChallenge</h1>
     <table>
         <tr>
             <th>Club</th>
