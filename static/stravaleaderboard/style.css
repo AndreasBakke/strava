@@ -31,7 +31,6 @@ th{
 }
 
 #omegalogo{
-    background-image: white url("images/omega.png");
+    background-image: url("images/omega.png");
     width: 20%;
-    padding-top: 100%;
 }
