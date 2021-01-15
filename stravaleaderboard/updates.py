@@ -62,7 +62,7 @@ def Create_check_Clubs():
         else:
             c = Club(name = i['name'], club_id = clubid)
             c.save()
-            for i in range(1,11):
+            for i in range(1,10):
                 a = c.distances_set.create(week=i)
                 a.save() 
             

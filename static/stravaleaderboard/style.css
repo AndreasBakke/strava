@@ -33,13 +33,15 @@ h2{
 }
 
 table{
-    padding: 10px;
     width: 80%;
     margin: 0 auto;
-    border: 1px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.219);
     border-collapse: collapse;
-    border-radius: 25px;
-
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
+    border-spacing: 0;
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
 }
 
 .tableelmt {
@@ -48,7 +50,7 @@ table{
 }
 
 td, th {
-    border: 1px solid rgba(121, 121, 121, 0.73);
+    border: 1px solid rgba(121, 121, 121, 0.418);
     padding: 8px;
     text-align: center;
 }
@@ -71,4 +73,5 @@ th{
     border: 0;
     margin: 0 auto;
     height: 100px;
+    box-shadow: none;
 }

@@ -11,7 +11,7 @@
     <tr class="tableElmt">
         <td class="tableElmt" style="width: 25%;"><img src="/static/stravaleaderboard/images/omega.png" id="omegaLogo" class="logo"></td>
         <td class="tableElmt" style="width: 50%;">
-            <table class="tableElmt" style="width: 100%;">
+            <table class="tableElmt" style="width: 100%; box-shadow: none;">
                 <tr class="tableElmt">
                     <td class="tableElmt"><h1 id="title">Around the world challenge</h1></td>
                 </tr >
@@ -26,11 +26,12 @@
 </table>
 <hr style="color: rgba(rgba(179, 179, 179, 0.726)); width: 70%; margin-top: 15px;">
 
-    <table style="margin-top: 20px;">
-        <tr>
+    <table style="margin-top: 20px; border-radius: 20px;" id="resulttable">
+        <tr style="border-radius: 20px;">
             <th>Club</th>
             <th>Distance this week</th>
             <th>Total Distance</th>
+            <th>Points</th>
             <th></th>
         </tr>
     {% for club in club_name_list %}
@@ -44,6 +45,7 @@
 
             </td>
             <td>{{ club.total_distance }}</td>
+            <td></td>
             <td><a href="/stravaleaderboard/{{ club.name }}/"> Weekly overview </a></td>
         </tr>
     {% endfor %}
