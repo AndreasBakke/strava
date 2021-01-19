@@ -19,5 +19,4 @@ from django.urls import include, path
 urlpatterns = [
     path('stravaleaderboard/', include('stravaleaderboard.urls')),
     path('admin/', admin.site.urls),
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
