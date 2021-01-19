@@ -33,7 +33,10 @@ def update_distances():
         data = requests.get("https://www.strava.com/api/v3/clubs/{}/activities?access_token={}&per_page=200&after={}".format(club.club_id, a.access_token, club.last_update)).json()
         newDistance = 0
         for i in data:
-            newDistance += Decimal(i["distance"]/1000)
+            if i["type"] == "Ride":
+                newDistance += Decimal(i["distance"]/3000)
+            else:
+                newDistance += Decimal(i["distance"]/1000)
         if currentWeek== 0:
             club.last_update = t
             club.save()
