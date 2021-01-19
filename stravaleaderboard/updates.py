@@ -52,7 +52,6 @@ def Create_check_Clubs():
     a= Secret.objects.get(name = "strava")
     parameters = {
     "access_token": a.access_token, "per_page": 200}
-
     club_name_list = Club.objects.all()
     base_url = "https://www.strava.com/api/v3/"
     endpoint = "athlete/clubs"
@@ -61,7 +60,7 @@ def Create_check_Clubs():
     for i in data:
         clubid = i['id']
         if Club.objects.filter(club_id= clubid).exists():
-            i=i
+            g =2
         else:
             c = Club(name = i['name'], club_id = clubid)
             c.save()

@@ -1,9 +1,9 @@
 {
-    "name": "StravaLeaderboard",
+    "name": "stravaleaderboard",
     "version": "1.0.0",
     "description": "Leaderboard from Strava's API",
     "scripts": {
-      "start": "serve",
+      "start": "serve"
     },
     "dependencies": {
       "serve": "^10.0.1"
