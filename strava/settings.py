@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import django_heroku
 from pathlib import Path
 import os 
+import dj_database_url
 import whitenoise 
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
