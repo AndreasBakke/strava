@@ -38,13 +38,13 @@ def update_distances():
             else:
                 newDistance += Decimal(i["distance"]/1000)
         if currentWeek== 0:
-            club.last_update = t
+            club.last_update = t+3600
             club.save()
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
             d.save()
-            club.last_update = t
+            club.last_update = t+3600
             club.save()
     
 
@@ -75,7 +75,7 @@ def update():
     
     #check if all clubs exist:
 
-    t = int(time.time())
+    t = int(time.time()) +3600
     club_name_list = Club.objects.all()
     try:
         updatetime = club_name_list[0].last_update
