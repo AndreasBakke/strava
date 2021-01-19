@@ -32,7 +32,7 @@ SECRET_KEY = '^pon-p+5o7+fm18e-%yjre1&uv8e^x$d))i9t!n1_hmz0093mg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['stravaleaderboard.herokuapp.com']
+ALLOWED_HOSTS = ['stravaleaderboard.herokuapp.com', '*']
 
 # Application definition
 
@@ -138,7 +138,7 @@ STATICFILES_DIRS = (
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
