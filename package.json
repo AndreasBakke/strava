@@ -1,0 +1,12 @@
+{
+    "name": "StravaLeaderboard",
+    "version": "1.0.0",
+    "description": "Leaderboard from Strava's API",
+    "scripts": {
+      "start": "serve",
+    },
+    "dependencies": {
+      "serve": "^10.0.1"
+    },
+    "author": "Andreas Bakke"
+  }
