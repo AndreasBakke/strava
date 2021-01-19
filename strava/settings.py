@@ -73,7 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'strava.wsgi.application'
-
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
