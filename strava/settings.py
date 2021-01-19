@@ -14,6 +14,8 @@ from pathlib import Path
 import os 
 import whitenoise 
 
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
