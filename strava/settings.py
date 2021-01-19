@@ -13,8 +13,6 @@ import django_heroku
 from pathlib import Path
 import os 
 import dj_database_url
-import whitenoise 
-
 
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
@@ -139,7 +137,7 @@ STATICFILES_DIRS = (
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
