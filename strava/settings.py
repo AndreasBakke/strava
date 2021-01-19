@@ -14,7 +14,7 @@ from pathlib import Path
 import os 
 import dj_database_url
 import whitenoise 
-from base import *
+
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
@@ -32,7 +32,7 @@ SECRET_KEY = '^pon-p+5o7+fm18e-%yjre1&uv8e^x$d))i9t!n1_hmz0093mg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['stravaleaderboard.herokuapp.com']
 
 # Application definition
 
@@ -83,15 +83,16 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
-#    }
-'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+    }
+#'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 import dj_database_url
 db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+#DATABASES['default'].update(db_from_env)
+DATABASES['default'].update(dj_database_url.config(conn_max_age=600, ssl_require=True))
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Password validation
