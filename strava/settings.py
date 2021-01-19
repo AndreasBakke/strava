@@ -81,10 +81,11 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
-    }
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+#    }
+'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 import dj_database_url
 db_from_env = dj_database_url.config()
