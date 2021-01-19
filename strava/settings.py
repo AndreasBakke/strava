@@ -14,7 +14,7 @@ from pathlib import Path
 import os 
 import dj_database_url
 import whitenoise 
-from django.views.static import serve 
+
 
 
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
