@@ -7,4 +7,3 @@ django_heroku
 setuptools
 requests
 datetime
-whitenoise
