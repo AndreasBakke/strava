@@ -34,8 +34,12 @@ def weeks(request, club_name):
     }
     return render(request, 'stravaleaderboard/weeks.html', context)
 
+#def about(request):
+#    context = {
+#        'a': 1,
+#    }
+#    return render(request, 'stravaleaderboard/about.html', context)
 def about(request):
-    context = {
-        'a': 1,
-    }
-    return render(request, 'stravaleaderboard/about.html', context)
+    now = datetime.datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)
