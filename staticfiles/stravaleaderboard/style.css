@@ -67,11 +67,18 @@ p {
     font-size: 16px;
 }
 
-.botRight {
+.botRight1 {
     bottom: 0;
     right: 0;
     position: absolute;
 }
+
+.botRight2 {
+    bottom: 10px;
+    right: 0;
+    position:absolute;
+}
+
 
 .logo{
     display: inline-block;
