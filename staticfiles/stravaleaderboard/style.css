@@ -67,16 +67,14 @@ p {
     font-size: 16px;
 }
 
-.botRight1 {
+.botRight {
     bottom: 0;
     right: 0;
     position: absolute;
 }
 
-.botRight2 {
-    bottom: 10px;
-    right: 0;
-    position:absolute;
+.center {
+    text-align: center;
 }
 
 
