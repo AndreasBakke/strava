@@ -38,4 +38,4 @@ def about(request):
     context = {
         'a': 1,
     }
-    return render(request, 'stravaleaderboard/about.html', context)
+    return render(request, 'stravaleaderboard/about.html')
