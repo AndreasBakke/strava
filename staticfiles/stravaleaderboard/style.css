@@ -88,6 +88,9 @@ p {
     color: white;
 }
 
+#return {
+    text-align: center;
+}
 
 .logo{
     display: inline-block;
