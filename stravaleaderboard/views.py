@@ -33,3 +33,9 @@ def weeks(request, club_name):
         
     }
     return render(request, 'stravaleaderboard/weeks.html', context)
+
+def about(request):
+    context = {
+        'test': test,
+    }
+    return render(request, 'stravaleaderboard/weeks.html', context)
