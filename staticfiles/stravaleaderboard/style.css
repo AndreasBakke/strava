@@ -74,6 +74,8 @@ p {
 }
 
 .center {
+    text-decoration: none;
+    text-decoration: underline;
     text-align: center;
     font-weight: bold;
     color: white;
