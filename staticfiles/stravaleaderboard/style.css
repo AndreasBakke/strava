@@ -76,19 +76,10 @@ p {
     position: absolute;
 }
 
-.center {
-    text-decoration: none;
-    text-decoration: underline;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-}
-.center:link {
-    text-decoration: none;
-    text-decoration: underline;
-    text-align: center;
-    font-weight: bold;
-    color: white;
+.botLeft {
+    left:0;
+    bottom: 0;
+    position: absolute;
 }
 
 #return {
