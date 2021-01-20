@@ -3,7 +3,9 @@ html {
 	left: 0;
 	margin: 0;
     padding: 0;
-    background-image: url(images/background3.jpg);
+    background-image: url("images/background.56f473dbc5e3.jpg");
+    background-position: center;
+    back
     background-size:cover;
 	font-family: 'droid-sans', arial, sans-seriff;
 }
@@ -61,6 +63,9 @@ th{
     background-color: #dfdfdf;
 }
 
+td {
+    background-color: white;
+}
 
 #return {
     text-align: center;

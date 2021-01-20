@@ -27,19 +27,23 @@ def index(request):
     return render(request, 'stravaleaderboard/index.html', context)
 
 def weeks(request, club_name):
-    club = Club.objects.get(name=club_name)
+    try:
+        club = Club.objects.get(name=club_name)
+    except:
+        club = 1
+
     context = {
         'club': club,
         
     }
     return render(request, 'stravaleaderboard/weeks.html', context)
 
-#def about(request):
-#    context = {
-#        'a': 1,
-#    }
-#    return render(request, 'stravaleaderboard/about.html', context)
 def about(request):
-    now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
-    return HttpResponse(html)
+    context = {
+        'a': 1,
+    }
+    return render(request, 'stravaleaderboard/about.html', context)
+#def about(request):
+#    now = datetime.datetime.now()
+#    html = "<html><body>It is now %s.</body></html>" % now
+#    return HttpResponse(html)

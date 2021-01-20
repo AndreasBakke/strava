@@ -36,17 +36,17 @@
         </tr>
     {% for club in club_name_list %}
         <tr> 
-            <td>{{ club.name }}</td>
+            <td style="background-color: white;">{{ club.name }}</td>
             {% for dist in club.distances_set.all %}
                 {% if dist.week ==  current_week  %}
-                <td>{{ dist.distance }}</td>
+                <td style="background-color: white;">{{ dist.distance }}</td>
                 {% endif %}
             {% endfor %}
 
             </td>
-            <td>{{ club.total_distance }}</td>
-            <td></td>
-            <td><a href="/stravaleaderboard/{{ club.name }}/"> Weekly overview </a></td>
+            <td style="background-color: white;">{{ club.total_distance }}</td>
+            <td style="background-color: white;"></td>
+            <td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/"> Weekly overview </a></td>
         </tr>
     {% endfor %}
     </table>
