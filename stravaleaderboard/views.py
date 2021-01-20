@@ -13,7 +13,7 @@ def index(request):
     #template = loader.get_template('stravaleaderboard/index.html')
     last_updates = club_name_list[0].last_update
     dato = datetime.datetime.today()
-    t = int(time.time())+3600
+    t = int(time.time())
     deltaT = int((t-last_updates)/60)
     startdate = datetime.datetime(2021, 1, 4)#update to 11 when publishing
     for i in range(1,11):
