@@ -62,10 +62,10 @@ th{
 }
 
 p {
-    color: black;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    color: white;
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: white;
     font-size: 16px;
 }
 
