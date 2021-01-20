@@ -77,7 +77,7 @@ p {
 }
 
 .botLeft {
-    left:0;
+    left:10px;
     bottom: 0;
     position: absolute;
 }
