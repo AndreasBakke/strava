@@ -67,8 +67,9 @@ p {
     font-size: 16px;
 }
 
-#return {
-    text-align: center;
+.botRight {
+    float: right;
+    position: absolute;
 }
 
 .logo{

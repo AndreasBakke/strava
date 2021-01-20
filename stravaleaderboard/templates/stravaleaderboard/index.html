@@ -50,8 +50,10 @@
         </tr>
     {% endfor %}
     </table>
-    <p id="return">Last Updated:  {{ deltaT }} minutes ago </p>
-    <p><a href="{% url 'about' %}"> Rules & information </a></p>
+    <div class="box">
+        <p class="botRight">Last Updated:  {{ deltaT }} minutes ago </p>
+        <p class="botRight"><a href="{% url 'about' %}"> Rules & information </a></p>    
+    </div>
 {% else %}
     <p>No clubs are available.</p>
 {% endif %}
