@@ -69,9 +69,7 @@ p {
     /*text-shadow: 2px 2px 12px white;*/
     font-size: 16px;
 }
-a:hover {
-    color: white;
-}
+
 
 .botRight {
     bottom: 0;
@@ -100,4 +98,8 @@ a:hover {
     margin: 0 auto;
     height: 100px;
     box-shadow: none;
+}
+
+a:hover {
+    color: grey;
 }
