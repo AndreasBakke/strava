@@ -3,7 +3,7 @@ html {
 	left: 0;
 	margin: 0;
     padding: 0;
-    background-image: url(images/background3_80.png);
+    background-image: url("images/background3_80.10dd8225c946.png");
     background-size:cover;
 	font-family: 'droid-sans', arial, sans-seriff;
 }
@@ -123,7 +123,7 @@ progress {
     margin: 0 auto;
     padding: 4px;
     border: 0 none;
-    background: #4fa3db;
+    background: #cbeaff;
     border-radius: 14px;
     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
 }
@@ -139,6 +139,5 @@ progress::-moz-progress-bar {
     text-align: center; 
     position: relative;
     font-weight: bold;
-    color: #333;
-    margin-top: 8px;
+    color: white;
 }

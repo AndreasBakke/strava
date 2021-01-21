@@ -22,11 +22,14 @@ def index(request):
     totDist = 0
     for club in club_name_list:
         totDist += club.total_distance
+
+    percent = round(totDist/40075, 1)
     context = {
         'club_name_list' : club_name_list,
         'current_week': currentWeek,
         'deltaT': deltaT,
-        'totDist': totDist
+        'totDist': totDist,
+        'percent': percent
     }
     return render(request, 'stravaleaderboard/index.html', context)
 
