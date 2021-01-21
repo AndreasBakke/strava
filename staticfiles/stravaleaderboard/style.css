@@ -100,6 +100,6 @@ p {
     box-shadow: none;
 }
 
-a:hover {
+.hover:hover {
     color: grey;
 }
