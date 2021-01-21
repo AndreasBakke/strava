@@ -1,9 +1,8 @@
-Sykkelpoeng
+
 About page
 
 oprette points database til club som er weekly distance / members, og en total points
 Stil
 Prøve med flere klubber og aktiviteter.
-skrive GDPR analyse
 
 Progress rundt verden bar

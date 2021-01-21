@@ -31,7 +31,7 @@
             <th>Club</th>
             <th>Distance this week</th>
             <th>Total Distance</th>
-            <th>Points</th>
+            <th>Points this week</th>
             <th></th>
         </tr>
     {% for club in club_name_list %}
@@ -40,12 +40,12 @@
             {% for dist in club.distances_set.all %}
                 {% if dist.week ==  current_week  %}
                 <td style="background-color: white;">{{ dist.distance }}</td>
+                <td style="background-color: white;">{{ dist.points }}</td>
                 {% endif %}
             {% endfor %}
 
             </td>
             <td style="background-color: white;">{{ club.total_distance }}</td>
-            <td style="background-color: white;"></td>
             <td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/"> Weekly overview </a></td>
         </tr>
     {% endfor %}

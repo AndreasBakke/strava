@@ -69,6 +69,9 @@ p {
     /*text-shadow: 2px 2px 12px white;*/
     font-size: 16px;
 }
+a:hover {
+    color: white;
+}
 
 .botRight {
     bottom: 0;
