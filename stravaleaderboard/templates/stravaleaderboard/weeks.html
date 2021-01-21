@@ -9,11 +9,13 @@
         <tr>
             <th>Week</th>
             <th>Distance</th>
+            <th>Points</th>
         </tr>
     {% for distance in club.distances_set.all|dictsort:"week" %}
         <tr>
             <td style="background-color: white;">Week {{  distance.week|add:3  }}</td>
             <td style="background-color: white;">{{ distance.distance }} km</td>
+            <td style="background-color: white;">{{ distance.points }} km</td>
         </tr>
                 {% endfor %}
     </table>

@@ -44,6 +44,7 @@ def update_distances():
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
             d.points = int(d.distance / club.members)
+            club.currentpoints = d.points
             d.save()
             club.last_update = t
             club.save()

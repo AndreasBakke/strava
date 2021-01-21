@@ -20,6 +20,7 @@ class Club(models.Model):
     last_update = models.IntegerField(default=1610323201)
     total_distance = models.DecimalField(max_digits=200, decimal_places=1, default=0)
     members = models.IntegerField(default = 1)
+    currentpoints = models.IntegerField(default=0)
     def __str__(self):
         return str(self.name)
 
