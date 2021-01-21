@@ -15,11 +15,11 @@
         <tr>
             <td style="background-color: white;">Week {{  distance.week|add:3  }}</td>
             <td style="background-color: white;">{{ distance.distance }} km</td>
-            <td style="background-color: white;">{{ distance.points }} km</td>
+            <td style="background-color: white;">{{ distance.points }}</td>
         </tr>
                 {% endfor %}
     </table>
-    <p id="return"><a style="text-decoration: none; color: black;" class="hover" href="{% url 'index' %}">Return</a></p>
+    <p id="return"><a class="hover" href="{% url 'index' %}">Return</a></p>
 {% else %}
     <p>No results are available.</p>
     <p id="return"><a href="/stravaleaderboard/">Return</a></p>

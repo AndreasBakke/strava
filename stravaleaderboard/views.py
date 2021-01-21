@@ -19,10 +19,14 @@ def index(request):
     for i in range(1,11):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek=i
+    totDist = 0
+    for club in club_name_list:
+        totDist += club.total_distance
     context = {
         'club_name_list' : club_name_list,
         'current_week': currentWeek,
-        'deltaT': deltaT
+        'deltaT': deltaT,
+        'totDist': totDist
     }
     return render(request, 'stravaleaderboard/index.html', context)
 

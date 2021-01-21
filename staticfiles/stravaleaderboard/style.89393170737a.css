@@ -3,7 +3,7 @@ html {
 	left: 0;
 	margin: 0;
     padding: 0;
-    background-image: url(images/background3_80.png);
+    background-image: url("images/background3_80.10dd8225c946.png");
     background-size:cover;
 	font-family: 'droid-sans', arial, sans-seriff;
 }
@@ -73,7 +73,7 @@ p {
 
 .botRight {
     bottom: 0;
-    right: 10;
+    right: 0;
     position: absolute;
 }
 
@@ -108,17 +108,8 @@ a{
     border-radius: 15px;
     width: fit-content;
     width: 60%;
-    margin: 0 auto;
-    padding: 5px;
 }
 
 .hover:hover {
     color: grey;
-}
-
-progress {
-    width: 70%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 3px;
 }

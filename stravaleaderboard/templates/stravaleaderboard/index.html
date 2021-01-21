@@ -29,8 +29,8 @@
     <table style="margin-top: 20px; border-radius: 20px;" id="resulttable">
         <tr style="border-radius: 20px;">
             <th>Club</th>
-            <th>Distance this week</th>
             <th>Points this week</th>
+            <th>Distance this week</th>
             <th>Total Distance</th>
             <th></th>
         </tr>
@@ -39,17 +39,23 @@
             <td style="background-color: white;">{{ club.name }}</td>
             {% for dist in club.distances_set.all %}
                 {% if dist.week ==  current_week  %}
-                <td style="background-color: white;">{{ dist.distance }}</td>
                 <td style="background-color: white;">{{ dist.points }}</td>
+                <td style="background-color: white;">{{ dist.distance }} km</td>
+
                 {% endif %}
             {% endfor %}
 
             </td>
-            <td style="background-color: white;">{{ club.total_distance }}</td>
+            <td style="background-color: white;">{{ club.total_distance }} km</td>
             <td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td>
         </tr>
     {% endfor %}
     </table>
+    <div id="progressbox" style="text-align: center; padding: 5px; position: absolute; width: 100%;" >
+        <progress max="40075" value="{{ totDist }}"></progress>
+    </div>
+  
+
     <div class="box">
         <p class="botRight">Last Updated:  {{ deltaT }} minutes ago </p>
         <p class="botLeft"><a  href="{% url 'about' %}"class="hover"> Rules & information </a></p>    

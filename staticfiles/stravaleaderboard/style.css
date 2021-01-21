@@ -73,7 +73,7 @@ p {
 
 .botRight {
     bottom: 0;
-    right: 0;
+    right: 10;
     position: absolute;
 }
 
@@ -104,12 +104,23 @@ a{
     text-decoration: underline;
 }
 #rulesbox {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     width: fit-content;
-    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    padding: 5px;
 }
 
 .hover:hover {
     color: grey;
+}
+
+progress {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 3px;
+
+
 }

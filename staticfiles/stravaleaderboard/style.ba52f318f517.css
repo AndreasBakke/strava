@@ -3,7 +3,7 @@ html {
 	left: 0;
 	margin: 0;
     padding: 0;
-    background-image: url(images/background3_80.png);
+    background-image: url("images/background3_80.10dd8225c946.png");
     background-size:cover;
 	font-family: 'droid-sans', arial, sans-seriff;
 }
@@ -121,4 +121,7 @@ progress {
     display: block;
     margin: 0 auto;
     border-radius: 3px;
+    color: red;
+
+
 }
