@@ -9,7 +9,7 @@ import time
 # Create your views here.
 def index(request):
     update()
-    club_name_list = Club.objects.all().order_by('currentpoints')
+    club_name_list = Club.objects.all().order_by('-currentpoints')
     #template = loader.get_template('stravaleaderboard/index.html')
     last_updates = club_name_list[0].last_update
     dato = datetime.datetime.today()
