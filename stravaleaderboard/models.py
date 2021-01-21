@@ -19,7 +19,7 @@ class Club(models.Model):
     club_id = models.TextField(max_length=15)
     last_update = models.IntegerField(default=1610323201)
     total_distance = models.DecimalField(max_digits=200, decimal_places=1, default=0)
-    #members = models.IntegerField(default = 1)
+    members = models.IntegerField(default = 1)
     def __str__(self):
         return str(self.name)
 
