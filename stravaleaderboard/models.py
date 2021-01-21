@@ -29,7 +29,7 @@ class Distances(models.Model):
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
     week = models.IntegerField()
     distance = models.DecimalField(max_digits=200, decimal_places=1, default=0)
-    points = models.IntegerField(default = 0)
+    points = models.DecimalField(max_digits=200, default=0, decimal_places=1)
     def __str__(self):
         return self.club.name + 'week'+ str(self.week)
 
