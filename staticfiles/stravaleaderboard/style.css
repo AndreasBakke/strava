@@ -99,6 +99,10 @@ p {
     height: 100px;
     box-shadow: none;
 }
+a{
+    color: black;
+    text-decoration: underline;
+}
 
 .hover:hover {
     color: grey;
