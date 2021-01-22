@@ -98,7 +98,7 @@ def update():
     for club in club_name_list:
         totalDistance = 0
         for dist in club.distances_set.all():
-            totalDistance +=  dist.distance
+            totalDistance +=  dist.distance 
         club.total_distance = totalDistance
         club.save()
   
