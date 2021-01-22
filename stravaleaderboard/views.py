@@ -19,6 +19,8 @@ def index(request):
     for i in range(1,11):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek=i
+        else:
+            currentWeek = 0
     totDist = 0
     for club in club_name_list:
         totDist += club.total_distance
