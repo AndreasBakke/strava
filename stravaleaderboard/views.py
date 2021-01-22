@@ -16,11 +16,9 @@ def index(request):
     t = int(time.time())
     deltaT = int((t-last_updates)/60)
     startdate = datetime.datetime(2021, 1, 18)#update to 19 when publishing
-    for i in range(1,11):
+    for i in range(0,11):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek=i
-        else:
-            currentWeek = 0
     totDist = 0
     for club in club_name_list:
         totDist += club.total_distance
