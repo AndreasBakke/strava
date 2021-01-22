@@ -41,10 +41,13 @@
         <tr> 
             <td style="background-color: white;">{{ club.name }}</td>
             {% for dist in club.distances_set.all %}
+                {% if current_week == 0 %}
+                    <td style="background-color: white;">0</td>
+                    <td style="background-color: white;">{{ dist.distance }} km</td>
+                {% endif %}
                 {% if dist.week ==  current_week  %}
-                <td style="background-color: white;">{{ dist.points }} points</td>
-                <td style="background-color: white;">{{ dist.distance }} km</td>
-
+                    <td style="background-color: white;">{{ dist.points }}</td>
+                    <td style="background-color: white;">{{ dist.distance }} km</td>
                 {% endif %}
             {% endfor %}
 
