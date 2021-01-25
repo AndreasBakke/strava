@@ -30,7 +30,7 @@ def update_distances():
             currentWeek =i
 
     for club in club_name_list:
-        data = requests.get("https://www.strava.com/api/v3/clubs/{}/activities?access_token={}&per_page=200&after={}&before={}".format(club.club_id, a.access_token, club.last_update, t)).json()
+        data = requests.get("https://www.strava.com/api/v3/clubs/{}/activities?access_token={}&per_page=200&after={}".format(club.club_id, a.access_token, club.last_update)).json()
         newDistance = 0
         for i in data:
             if i["type"] == "Ride":
