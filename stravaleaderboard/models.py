@@ -14,10 +14,10 @@ class Activity(models.Model):
     def __str__(self):
         return str(self.id)
 
-class Club(models.Model):
+class Club(models.Model): 
     name = models.TextField(max_length=200)
     club_id = models.TextField(max_length=15)
-    last_update = models.IntegerField(default=1610323201)
+    last_update = models.IntegerField(default=1612738800)
     total_distance = models.DecimalField(max_digits=200, decimal_places=1, default=0)
     members = models.IntegerField(default = 1)
     currentpoints = models.DecimalField(max_digits=200, default=0, decimal_places=1)

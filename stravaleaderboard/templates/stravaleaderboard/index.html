@@ -58,11 +58,11 @@
     {% endfor %}
     </table>
     <div id="progressbox" style="text-align: center; position: absolute; width: 100%; left: 0; margin-top: 15px;" >
-        <progress max="40075" value="{{ totDist }}"></progress>
+        <progress max="29140" value="{{ totDist }}"></progress>
     </div>
     <div id="test" ><span>{{ totDist }}km of 29140km ({{ percent }}%) </span></div>
   
-
+    <p style="text-align: center;">Some current issues with the leaderboard are now explained under <a href=" {% url 'about' %}" class="hover">Rules & information</a>.<br> The correct distances will be updated regularly</p>
     <div class="box">
         <p class="botRight">Last Updated:  {{ deltaT }} minutes ago </p>
         <p class="botLeft"><a  href="{% url 'about' %}"class="hover"> Rules & information </a></p>    

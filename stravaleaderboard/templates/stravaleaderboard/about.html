@@ -22,14 +22,21 @@
 
 <p style="text-align: center;">Running is a high impact & cardio activity and therefore induces more stress than cycling and  fairness we will be using a ratio for cycling due to the amount of kilometres that can be easily covered compared to running and other activities; <b>for each 3km cycled = 1km run.</b></p>
 <p style="text-align: center;">Once the winning club has been disclosed the committee will do a random draw between the club participants to select the lucky winner of the weekly prize.</p>
-<p style="text-align: center;"><b>Weekly prize:</b> Suunto 9 Barometer sports watch with Nordic inside!</p>
+<p style="text-align: center;"><b><u>Weekly prize:</b> Suunto 9 Barometer sports watch with Nordic inside!</u></p>
+
+
+<h2>Current issues</h2>
+<p style="text-align: center;">
+    The leaderboard runs a pythonscript at most once an hour, where it retreieves the activities listed under "Last activites" for each club. The activites are parsed through a loop where depending on the activity, the distance is adjusted according to the ratios above before beeing added to the weekly total.<br><br>
+    The Strava API only returns the activities with registered time/date <b>after</b> the last update.Therefore, if an activity is registered with date/time earlier than the last update, it will not be retrieved by the Strava API. We will do our best to adjust for this regularly.<br><br>
+    Because the API only returns activites visible under the "Last Activities" tab, activities registered as viewable "only by you" is impossible to count.<br><br>
+    <b>Latest manual correction:</b> 11.02.21, 18:30
+</p>
 
 <h2>Information about the leaderboard</h2>
 <p style="text-align: center;">
     The leaderboard uses Strava's own API to collect the participating clubs activity. <br>No personal data is stored or processed.<br>The weeks end each sunday at 23:59 GMT+1. <br>For questions & sugestions contact <a href="mailto:andrsba@stud.ntnu.no?Subject=Stravaleaderboard" class="hover">andrsba@stud.ntnu.no</a>
 </p>
-<p></p>
-
 <p id="return"><a  href="{% url 'index' %}" class="hover">Return</a></p>
 
 </div>

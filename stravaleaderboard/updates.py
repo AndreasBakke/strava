@@ -24,7 +24,7 @@ def update_distances():
     t = int(time.time())
     a= Secret.objects.get(name = "strava")
     dato = datetime.datetime.today()
-    startdate = datetime.datetime(2021, 1, 18)#update to 18 when publishing
+    startdate = datetime.datetime(2021, 2, 1)#update to 18 when publishing
     for i in range(1,10):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek =i
@@ -34,6 +34,8 @@ def update_distances():
         newDistance = 0
         for i in data:
             if i["type"] == "Ride":
+                newDistance += Decimal(i["distance"]/3000)
+            elif i["type"] == "VirtualRide":
                 newDistance += Decimal(i["distance"]/3000)
             else:
                 newDistance += Decimal(i["distance"]/1000)
