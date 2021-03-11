@@ -37,6 +37,10 @@ def update_distances():
                 newDistance += Decimal(i["distance"]/3000)
             elif i["type"] == "VirtualRide":
                 newDistance += Decimal(i["distance"]/3000)
+            elif i["type"] == "Snowboard":
+                newDistance += 0
+            elif i["type"] == "AlpineSki":
+                newDistance += 0
             else:
                 newDistance += Decimal(i["distance"]/1000)
         if currentWeek== 0:
@@ -45,7 +49,10 @@ def update_distances():
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
-            d.points = d.distance / club.members
+            if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
+                d.points = d.distance / club.members -2
+            else:
+                d.points = d.distance / club.members
             club.currentpoints = d.points
             d.save()
             club.last_update = t
