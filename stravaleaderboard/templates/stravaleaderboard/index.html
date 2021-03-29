@@ -32,8 +32,6 @@
     <table style="margin-top: 20px; border-radius: 20px;" id="resulttable">
         <tr style="border-radius: 20px;">
             <th>Club</th>
-            <th>Points this week</th>
-            <th>Distance this week</th>
             <th>Total Distance</th>
             <th></th>
         </tr>
@@ -44,12 +42,6 @@
                     <td style="background-color: white;">0</td>
                     <td style="background-color: white;">0 km</td>
                 {% endif %}
-            {% for dist in club.distances_set.all %}
-                {% if dist.week ==  current_week  %}
-                    <td style="background-color: white;">{{ dist.points }}</td>
-                    <td style="background-color: white;">{{ dist.distance }} km</td>
-                {% endif %}
-            {% endfor %}
 
             </td>
             <td style="background-color: white;">{{ club.total_distance }} km</td>
