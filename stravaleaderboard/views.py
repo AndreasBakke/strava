@@ -8,6 +8,7 @@ import time
 
 # Create your views here.
 def index(request):
+    currentweek = 10
     update()
     club_name_list = Club.objects.all().order_by('-currentpoints')
     #template = loader.get_template('stravaleaderboard/index.html')
