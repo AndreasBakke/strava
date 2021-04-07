@@ -5,7 +5,7 @@ from .updates import update
 import datetime
 import time
 
-currentweek = 10
+currentWeek = 10
 # Create your views here.
 def index(request):
 
