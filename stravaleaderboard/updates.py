@@ -32,14 +32,14 @@ def update_distances():
     for club in club_name_list:
         data = requests.get("https://www.strava.com/api/v3/clubs/{}/activities?access_token={}&per_page=200&after={}".format(club.club_id, a.access_token, club.last_update)).json()
         newDistance = 0
-        for i in data["type"]:
-            if i == "Ride":
+        for i in data:
+            if i["type"] == "Ride":
                 newDistance += Decimal(i["distance"]/3000)
-            elif i == "VirtualRide":
+            elif i["type"] == "VirtualRide":
                 newDistance += Decimal(i["distance"]/3000)
-            elif i == "Snowboard":
+            elif i["type"] == "Snowboard":
                 newDistance += 0
-            elif i == "AlpineSki":
+            elif i["type"] == "AlpineSki":
                 newDistance += 0
             else:
                 newDistance += Decimal(i["distance"]/1000)
