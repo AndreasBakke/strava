@@ -8,3 +8,4 @@ setuptools
 requests
 datetime
 whitenoise
+jsonfield
