@@ -31,6 +31,7 @@ def update_distances():
 
     for club in club_name_list:
         data = requests.get("https://www.strava.com/api/v3/clubs/{}/activities?access_token={}&per_page=200&after={}".format(club.club_id, a.access_token, club.last_update)).json()
+        print(data)
         newDistance = 0
         for i in data:
             if i["type"] == "Ride":
