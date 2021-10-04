@@ -40,7 +40,7 @@
             <th class="distancemarker" style="width: 10%; border-left: 2px dotted black;">...</th>
             <th style="text-align: center;">Distance current week</th>
             <th style="text-align: center;">Total Distance</th>
-            <th style="text-align: center;">Adjusted Distance</th>
+            <th style="text-align: center;">Points</th>
 <!--             <th></th> -->
         </tr>
     {% for club in club_name_list %}
@@ -70,7 +70,7 @@
                 {% endif %}
             {% endfor %}
             <td style="background-color: white;">{{ club.total_distance }} km</td>
-            <td style="background-color: white;">{{ club.currentpoints }} km</td>
+            <td style="background-color: white;">{{ club.currentpoints }}</td>
             <!--<td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td> -->
         </tr>
     {% endfor %}
