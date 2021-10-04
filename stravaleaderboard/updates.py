@@ -50,10 +50,11 @@ def update_distances():
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
-            if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
+            """ if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
                 d.points = d.distance / club.members -2
-            else:
-                d.points = d.distance / club.members
+            else: """
+            d.points = d.distance / club.members
+            club.percentage = round(club.total_distance/29140*100, 1)
             club.currentpoints = d.points
             d.save()
             club.last_update = t
@@ -98,7 +99,7 @@ def update():
         updatetime = club_name_list[0].last_update
 
 
-    if (t-updatetime)>72:
+    if (t-updatetime)>7:
         exchange_credentials()
         Create_check_Clubs() 
         update_distances()
