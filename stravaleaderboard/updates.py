@@ -24,14 +24,13 @@ def update_distances():
     t = int(time.time())
     a= Secret.objects.get(name = "strava")
     dato = datetime.datetime.today()
-    startdate = datetime.datetime(2021, 9, 24)#update to 18 when publishing
+    startdate = datetime.datetime(2021, 9, 27)#update to 18 when publishing
     for i in range(1,10):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek =i
 
     for club in club_name_list:
         data = requests.get("https://www.strava.com/api/v3/clubs/{}/activities?access_token={}&per_page=200&after={}".format(club.club_id, a.access_token, club.last_update)).json()
-        print(data)
         newDistance = 0
         for i in data:
             if i["type"] == "Ride":
