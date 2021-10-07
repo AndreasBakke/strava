@@ -53,7 +53,7 @@ def update_distances():
                 d.points = d.distance / club.members -2
             else: """
             d.points = d.distance / club.members
-            club.percentage = round(club.total_distance/29140*100, 1)
+            club.percentage = round(club.total_distance/35276*100, 1)
             club.currentpoints = d.points
             d.save()
             club.last_update = t

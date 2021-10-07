@@ -29,26 +29,34 @@
 </table>
 <hr style="color: rgba(rgba(179, 179, 179, 0.726)); width: 80%; margin-top: 15px;">
 
-    <table style="margin-top: 20px; border-radius: 20px;" id="resulttable">
+    <table style="margin-top: 20px; margin-bottom: 20px; border-radius: 20px; table-layout: fixed;" id="resulttable">
         <tr style="border-radius: 20px; background-color: #dfdfdf; width: 100%;" >
-            <th style="width: 20%; text-align: center;">Club</th><!-- widths below need to add up to 60% -->
-            <th class="distancemarker" style="width: 10%;">Trondheim</th>
-            <th class="distancemarker" style="width: 10%; border-left: 2px dotted black;">Oslo</th>
-            <th class="distancemarker" style="width: 10%; border-left: 2px dotted black;">...</th>
-            <th class="distancemarker" style="width: 10%; border-left: 2px dotted black;">...</th>
-            <th class="distancemarker" style="width: 10%; border-left: 2px dotted black;">...</th>
-            <th class="distancemarker" style="width: 10%; border-left: 2px dotted black;">...</th>
-            <th style="text-align: center;">Distance current week</th>
+            <th style="width: 10%; text-align: center;">Club</th><!-- widths below need to add up to 60% -->
+            <th class="distancemarker" style="padding-left: 1; width: 2.1%;">Trondheim</th>
+            <th class="distancemarker" style="padding-left: 1; width: 2%; border-left: 2px dotted black;">Oulu</th>
+            <th class="distancemarker" style="padding-left: 1; width: 2.8%; border-left: 2px dotted black;">Stockholm</th>
+            <th class="distancemarker" style="padding-left: 1; width: 18.4%; border-left: 2px dotted black;">Krakow</th>
+            <th class="distancemarker" style="padding-left: 1; width: 12.5%; border-left: 2px dotted black;">India</th>
+            <th class="distancemarker" style="padding-left: 1; width: 3.1%; border-left: 2px dotted black;">Philippines</th>
+            <th class="distancemarker" style="padding-left: 1; width: 2.2%; border-left: 2px dotted black;">Hong Kong</th>
+            <th class="distancemarker" style="padding-left: 1; width: 1.9%; border-left: 2px dotted black;">Taipei</th>
+            <th class="distancemarker" style="padding-left: 1; width: 2.4%; border-left: 2px dotted black;">Shanghai</th>
+            <th class="distancemarker" style="padding-left: 1; width: 3.1%; border-left: 2px dotted black;">South Korea</th>
+            <th class="distancemarker" style="padding-left: 1; width: 21.5%; border-left: 2px dotted black;">Japan</th>
+            <th class="distancemarker" style="padding-left: 1; width: 21.4; border-left: 2px dotted black;">Portland</th>
+            <th class="distancemarker" style="padding-left: 1; width: 3.4%; border-left: 2px dotted black;">Bristol</th>
+            <th class="distancemarker" style="padding-left: 1; width: 3%; border-left: 2px dotted black;">Oslo</th>
+<!--             <th style="text-align: center;">Distance current week</th>
             <th style="text-align: center;">Total Distance</th>
             <th style="text-align: center;">Points</th>
-<!--             <th></th> -->
+ --><!--             <th></th> -->
         </tr>
     {% for club in club_name_list %}
         <tr> 
             <td style="background-color: white;">{{ club.name }}</td>
-            <td id="progresso" style="background-color: white;" colspan="6">
-                <progress max="29140" value="{{ club.total_distance }}"></progress>  
-                <div id="test" ><span>{{ club.total_distance }}km of 29140km ({{ club.percentage }}%) </span></div>
+            <td id="progresso" style="background-color: white;" colspan="13">
+                <progress max="35276" value="{{ club.total_distance }}"></progress>  
+                <div id="test" ><span>{{ club.total_distance }}km of 35276 ({{ club.percentage }}%) </span></div>
 <!--                 <span class="markerspan" style="display: inline-block; width: 16%; "></span>
                 <span class="markerspan" style="display: inline-block; width: 16%; border-left: 2px dotted black;"></span>
                 <span class="markerspan" style="display: inline-block; width: 16%; border-left: 2px dotted black;"></span>
@@ -64,16 +72,27 @@
 
             </td>
 
-            {% for dist in club.distances_set.all %}
+            <td style="background-color: white;"></td>
+<!--             {% for dist in club.distances_set.all %}
                 {% if dist.week ==  current_week  %}
                     <td style="background-color: white;">{{ dist.distance }} km</td>
                 {% endif %}
             {% endfor %}
             <td style="background-color: white;">{{ club.total_distance }} km</td>
             <td style="background-color: white;">{{ club.currentpoints }}</td>
-            <!--<td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td> -->
+ -->            <!--<td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td> -->
         </tr>
     {% endfor %}
+    <tr>
+        <td style="background-color: white; width: 5%;">Total</td>
+        <td id="progresso" style="background-color: white;" colspan="13">
+            <progress max="35276" value="{{ totDist }}"></progress>  
+            <div id="test" ><span>{{ totDist }}km of 35276km ({{ percent }}%) </span></div>
+        </td> 
+        <td style="background-color: white;"></td>
+    </tr>
+    </table>
+    
   
     <!-- <p style="text-align: center;">Some current issues with the leaderboard are now explained under <a href=" {% url 'about' %}" class="hover">Rules & information</a>.<br> The correct distances will be updated regularly</p>
      --><div class="box">
