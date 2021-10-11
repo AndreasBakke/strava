@@ -32,20 +32,20 @@
     <table style="margin-top: 20px; margin-bottom: 20px; border-radius: 20px; table-layout: fixed;" id="resulttable">
         <tr style="border-radius: 20px; background-color: #dfdfdf; width: 100%;" >
             <th style="width: 10%; text-align: center;">Club</th><!-- widths below need to add up to 60% -->
-            <th class="distancemarker" style="padding-left: 1; width: 2.1%;">Trondheim</th>
-            <th class="distancemarker" style="padding-left: 1; width: 2%; border-left: 2px dotted black;">Oulu</th>
-            <th class="distancemarker" style="padding-left: 1; width: 2.8%; border-left: 2px dotted black;">Stockholm</th>
-            <th class="distancemarker" style="padding-left: 1; width: 18.4%; border-left: 2px dotted black;">Krakow</th>
-            <th class="distancemarker" style="padding-left: 1; width: 12.5%; border-left: 2px dotted black;">India</th>
-            <th class="distancemarker" style="padding-left: 1; width: 3.1%; border-left: 2px dotted black;">Philippines</th>
-            <th class="distancemarker" style="padding-left: 1; width: 2.2%; border-left: 2px dotted black;">Hong Kong</th>
-            <th class="distancemarker" style="padding-left: 1; width: 1.9%; border-left: 2px dotted black;">Taipei</th>
-            <th class="distancemarker" style="padding-left: 1; width: 2.4%; border-left: 2px dotted black;">Shanghai</th>
-            <th class="distancemarker" style="padding-left: 1; width: 3.1%; border-left: 2px dotted black;">South Korea</th>
-            <th class="distancemarker" style="padding-left: 1; width: 21.5%; border-left: 2px dotted black;">Japan</th>
-            <th class="distancemarker" style="padding-left: 1; width: 21.4; border-left: 2px dotted black;">Portland</th>
-            <th class="distancemarker" style="padding-left: 1; width: 3.4%; border-left: 2px dotted black;">Bristol</th>
-            <th class="distancemarker" style="padding-left: 1; width: 3%; border-left: 2px dotted black;">Oslo</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Trondheim" style="padding-left: 1; width: 2.1%;">Trondheim</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Oulu" style="padding-left: 1; width: 2%; border-left: 2px dotted black;">Oulu</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Stockholm" style="padding-left: 1; width: 2.8%; border-left: 2px dotted black;">Stockholm</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Krackow" style="padding-left: 1; width: 18.4%; border-left: 2px dotted black;">Krakow</th>
+            <th class="distancemarker tooltip--left" data-tooltip="India" style="padding-left: 1; width: 12.5%; border-left: 2px dotted black;">India</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Phillipines" style="padding-left: 1; width: 3.1%; border-left: 2px dotted black;">Philippines</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Hong Kong" style="padding-left: 1; width: 2.2%; border-left: 2px dotted black;">Hong Kong</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Taipei" style="padding-left: 1; width: 1.9%; border-left: 2px dotted black;">Taipei</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Shanghai" style="padding-left: 1; width: 2.4%; border-left: 2px dotted black;">Shanghai</th>
+            <th class="distancemarker tooltip--left" data-tooltip="South Korea" style="padding-left: 1; width: 3.1%; border-left: 2px dotted black;">South Korea</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Japan" style="padding-left: 1; width: 21.5%; border-left: 2px dotted black;">Japan</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Portland" style="padding-left: 1; width: 21.4; border-left: 2px dotted black;">Portland</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Bristol" style="padding-left: 1; width: 3.4%; border-left: 2px dotted black;">Bristol</th>
+            <th class="distancemarker tooltip--left" data-tooltip="Oslo" style="padding-left: 1; width: 3%; border-left: 2px dotted black;">Oslo</th>
 <!--             <th style="text-align: center;">Distance current week</th>
             <th style="text-align: center;">Total Distance</th>
             <th style="text-align: center;">Points</th>
@@ -53,10 +53,10 @@
         </tr>
     {% for club in club_name_list %}
         <tr> 
-            <td style="background-color: white;">{{ club.name }}</td>
+            <td style="background-color: white;" class="tooltip--bottom" data-tooltip="km: {{ club.total_distance }} | Points: {{ club.total_points }} ">{{ club.name }}</td>
             <td id="progresso" style="background-color: white;" colspan="13">
-                <progress max="35276" value="{{ club.total_distance }}"></progress>  
-                <div id="test" ><span>{{ club.total_distance }}km of 35276 ({{ club.percentage }}%) </span></div>
+                <progress max="35276" value="{{ club.total_distance }}" ></progress>  
+                <div id="test" ><span class="tooltip--triangle" data-tooltip="km this week: {{ club.currentdistance }}  |  Points this week: {{ club.currentpoints }} ">{{ club.total_distance }}km of 35276 ({{ club.percentage }}%) | Points: {{ club.total_points }} </span></div>
 <!--                 <span class="markerspan" style="display: inline-block; width: 16%; "></span>
                 <span class="markerspan" style="display: inline-block; width: 16%; border-left: 2px dotted black;"></span>
                 <span class="markerspan" style="display: inline-block; width: 16%; border-left: 2px dotted black;"></span>

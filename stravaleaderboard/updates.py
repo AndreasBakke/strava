@@ -55,6 +55,7 @@ def update_distances():
             d.points = d.distance / club.members
             club.percentage = round(club.total_distance/35276*100, 1)
             club.currentpoints = d.points
+            club.currentdistance= d.distance
             d.save()
             club.last_update = t
             club.save()
@@ -107,9 +108,12 @@ def update():
     club_name_list = Club.objects.all()
     for club in club_name_list:
         totalDistance = 0
+        totalPoints = 0
         for dist in club.distances_set.all():
-            totalDistance +=  dist.distance 
+            totalDistance +=  dist.distance
+            totalPoints += dist.points
         club.total_distance = totalDistance
+        club.total_points = totalPoints
         club.save()
   
     #Pseudo: Hvis dato er mellom ukestart og ukeslutt 1, update week1....
