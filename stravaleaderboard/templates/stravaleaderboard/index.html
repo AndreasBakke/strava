@@ -62,10 +62,8 @@
     </div>
     <div id="test" ><span>{{ totDist }}km of 29140km ({{ percent }}%) </span></div>
   
-    <p style="text-align: center;">Some current issues with the leaderboard are now explained under <a href=" {% url 'about' %}" class="hover">Rules & information</a>.<br> The correct distances will be updated regularly</p>
     <div class="box">
-        <p class="botRight">Last Updated:  {{ deltaT }} minutes ago </p>
-        <p class="botLeft"><a  href="{% url 'about' %}"class="hover"> Rules & information </a></p>    
+        <p class="botRight">Last Updated:  {{ deltaT }} minutes ago </p>   
     </div>
 {% else %}
     <p>No clubs are available.</p>

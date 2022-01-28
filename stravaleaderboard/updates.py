@@ -24,7 +24,7 @@ def update_distances():
     t = int(time.time())
     a= Secret.objects.get(name = "strava")
     dato = datetime.datetime.today()
-    startdate = datetime.datetime(2021, 1, 18)#update to 18 when publishing
+    startdate = datetime.datetime(2022, 1, 17)#update to 18 when publishing
     for i in range(1,10):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek =i
@@ -75,7 +75,7 @@ def Create_check_Clubs():
         else:
             c = Club(name = i['name'], club_id = clubid)
             c.save()
-            for i in range(1,10):
+            for i in range(1,5):
                 a = c.distances_set.create(week=i)
                 a.save() 
             
@@ -97,7 +97,7 @@ def update():
         updatetime = club_name_list[0].last_update
 
 
-    if (t-updatetime)>3600:
+    if (t-updatetime)>3:
         exchange_credentials()
         Create_check_Clubs() 
         update_distances()
