@@ -45,15 +45,7 @@ def update_distances():
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
-<<<<<<< HEAD
-            """ if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
-                d.points = d.distance / club.members -2
-            else: """
             d.points = d.distance / club.members
-            club.percentage = round(club.total_distance/35276*100, 1)
-=======
-            d.points = d.distance / club.members
->>>>>>> parent of 80dddec (added handicap)
             club.currentpoints = d.points
             club.currentdistance= d.distance
             d.save()
