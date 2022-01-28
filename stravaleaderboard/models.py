@@ -18,7 +18,11 @@ from jsonfield import JSONField
 class Club(models.Model): 
     name = models.TextField(max_length=200)
     club_id = models.TextField(max_length=15)
+<<<<<<< HEAD
     last_update = models.IntegerField(default=1633039201)
+=======
+    last_update = models.IntegerField(default=1612738800)
+>>>>>>> parent of 80dddec (added handicap)
     total_distance = models.DecimalField(max_digits=200, decimal_places=1, default=0)
     total_points = models.DecimalField(max_digits=200, decimal_places=1, default=0)
     members = models.IntegerField(default = 1)
