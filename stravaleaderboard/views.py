@@ -8,6 +8,7 @@ import time
 
 # Create your views here.
 def index(request):
+    currentWeek = 10
     update()
     club_name_list = Club.objects.all().order_by('-currentpoints')
     #template = loader.get_template('stravaleaderboard/index.html')
@@ -15,15 +16,15 @@ def index(request):
     dato = datetime.datetime.today()
     t = int(time.time())
     deltaT = int((t-last_updates)/60)
-    startdate = datetime.datetime(2021, 1, 18)#update to 19 when publishing
+    startdate = datetime.datetime(2021, 9, 27)#update to 19 when publishing
     for i in range(0,11):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek=i
     totDist = 0
     for club in club_name_list:
         totDist += club.total_distance
+    percent = round(totDist/35276*100,1)
 
-    percent = round(totDist/29140*100, 1)
     context = {
         'club_name_list' : club_name_list,
         'current_week': currentWeek,

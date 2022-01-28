@@ -1,7 +1,8 @@
 from django.db import models
+from jsonfield import JSONField
 
 # Create your models here.
-class Activity(models.Model):
+""" class Activity(models.Model):
     activity = models.JSONField()
     #resource_state = models.IntegerField()
     #athlete_name = models.TextField(max_length=200)
@@ -12,15 +13,18 @@ class Activity(models.Model):
     #total_elevation_gain = models.DecimalField(max_digits=200, decimal_places=1)
     #activity_type = models.TextField(max_length=200)
     def __str__(self):
-        return str(self.id)
+        return str(self.id) """
 
 class Club(models.Model): 
     name = models.TextField(max_length=200)
     club_id = models.TextField(max_length=15)
-    last_update = models.IntegerField(default=1615158000)
+    last_update = models.IntegerField(default=1633039201)
     total_distance = models.DecimalField(max_digits=200, decimal_places=1, default=0)
+    total_points = models.DecimalField(max_digits=200, decimal_places=1, default=0)
     members = models.IntegerField(default = 1)
     currentpoints = models.DecimalField(max_digits=200, default=0, decimal_places=1)
+    currentdistance = models.DecimalField(max_digits=200, default=0, decimal_places=1)
+    percentage = models.DecimalField(max_digits=200, default=0, decimal_places=1)
     def __str__(self):
         return str(self.name)
 

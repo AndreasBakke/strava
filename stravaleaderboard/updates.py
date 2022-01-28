@@ -24,7 +24,7 @@ def update_distances():
     t = int(time.time())
     a= Secret.objects.get(name = "strava")
     dato = datetime.datetime.today()
-    startdate = datetime.datetime(2021, 1, 18)#update to 18 when publishing
+    startdate = datetime.datetime(2021, 9, 27)#update to 18 when publishing
     for i in range(1,10):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek =i
@@ -49,11 +49,13 @@ def update_distances():
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
-            if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
+            """ if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
                 d.points = d.distance / club.members -2
-            else:
-                d.points = d.distance / club.members
+            else: """
+            d.points = d.distance / club.members
+            club.percentage = round(club.total_distance/35276*100, 1)
             club.currentpoints = d.points
+            club.currentdistance= d.distance
             d.save()
             club.last_update = t
             club.save()
@@ -97,7 +99,7 @@ def update():
         updatetime = club_name_list[0].last_update
 
 
-    if (t-updatetime)>3600:
+    if (t-updatetime)>7200:
         exchange_credentials()
         Create_check_Clubs() 
         update_distances()
@@ -106,9 +108,12 @@ def update():
     club_name_list = Club.objects.all()
     for club in club_name_list:
         totalDistance = 0
+        totalPoints = 0
         for dist in club.distances_set.all():
-            totalDistance +=  dist.distance 
+            totalDistance +=  dist.distance
+            totalPoints += dist.points
         club.total_distance = totalDistance
+        club.total_points = totalPoints
         club.save()
   
     #Pseudo: Hvis dato er mellom ukestart og ukeslutt 1, update week1....
