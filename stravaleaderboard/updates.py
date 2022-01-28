@@ -24,7 +24,7 @@ def update_distances():
     t = int(time.time())
     a= Secret.objects.get(name = "strava")
     dato = datetime.datetime.today()
-    startdate = datetime.datetime(2021, 9, 27)#update to 18 when publishing
+    startdate = datetime.datetime(2022, 1, 17)#update to 18 when publishing
     for i in range(1,10):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek =i
@@ -37,6 +37,10 @@ def update_distances():
                 newDistance += Decimal(i["distance"]/3000)
             elif i["type"] == "VirtualRide":
                 newDistance += Decimal(i["distance"]/3000)
+            elif i["type"] == "Snowboard":
+                newDistance += 0
+            elif i["type"] == "AlpineSki":
+                newDistance += 0
             else:
                 newDistance += Decimal(i["distance"]/1000)
         if currentWeek== 0:
@@ -45,9 +49,11 @@ def update_distances():
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
-            d.points = d.distance / club.members
+            if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
+                d.points = d.distance / club.members -2
+            else:
+                d.points = d.distance / club.members
             club.currentpoints = d.points
-            club.currentdistance= d.distance
             d.save()
             club.last_update = t
             club.save()
@@ -69,7 +75,7 @@ def Create_check_Clubs():
         else:
             c = Club(name = i['name'], club_id = clubid)
             c.save()
-            for i in range(1,10):
+            for i in range(1,5):
                 a = c.distances_set.create(week=i)
                 a.save() 
             
@@ -91,7 +97,7 @@ def update():
         updatetime = club_name_list[0].last_update
 
 
-    if (t-updatetime)>7200:
+    if (t-updatetime)>3:
         exchange_credentials()
         Create_check_Clubs() 
         update_distances()
@@ -100,12 +106,9 @@ def update():
     club_name_list = Club.objects.all()
     for club in club_name_list:
         totalDistance = 0
-        totalPoints = 0
         for dist in club.distances_set.all():
-            totalDistance +=  dist.distance
-            totalPoints += dist.points
+            totalDistance +=  dist.distance 
         club.total_distance = totalDistance
-        club.total_points = totalPoints
         club.save()
   
     #Pseudo: Hvis dato er mellom ukestart og ukeslutt 1, update week1....
