@@ -49,10 +49,7 @@ def update_distances():
         else:     
             d = club.distances_set.get(week = currentWeek)
             d.distance += newDistance
-            if club.name == "Nordic Semiconductor - Oslo Office" or club.name == "Nordic Semiconductor - USA":
-                d.points = d.distance / club.members -2
-            else:
-                d.points = d.distance / club.members
+            d.points = d.distance / club.members
             club.currentpoints = d.points
             d.save()
             club.last_update = t
