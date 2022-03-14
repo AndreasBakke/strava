@@ -16,7 +16,7 @@ def index(request):
     t = int(time.time())
     deltaT = int((t-last_updates)/60)
     startdate = datetime.datetime(2022, 2, 7)#update to 19 when publishing
-    for i in range(0,5):
+    for i in range(0,6):
         if startdate + datetime.timedelta(days=7)*(1+i)>= dato >= startdate + datetime.timedelta(days=7)*i:
             currentWeek=i
     totDist = 0
