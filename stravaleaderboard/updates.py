@@ -15,9 +15,10 @@ def finalscore():
         points = 0
         for dist in d:
             points += dist.points
+        club.totalPoints = points
         clubScore.append(points)
         Scores.append(clubScore)
-    
+    return Scores
     print(Scores)
 
 
