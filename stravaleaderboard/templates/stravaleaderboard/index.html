@@ -9,7 +9,6 @@
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'stravaleaderboard/style.css' %}">
 {% if club_name_list %}
-    
 <table  id="titlebar">
     <tr class="tableElmt">
         <td class="tableElmt" style="width: 25%;"><img src="{% static 'stravaleaderboard/images/omega.png' %}" id="omegaLogo" class="logo"></td>
@@ -38,23 +37,28 @@
             <th></th>
         </tr>
     {% for club in club_name_list %}
-        <tr> 
-            <td style="background-color: white;">{{ club.name }}</td>
-            {% if current_week == 0 %}
-                    <td style="background-color: white;">0</td>
-                    <td style="background-color: white;">0 km</td>
-                {% endif %}
-            {% for dist in club.distances_set.all %}
-                {% if dist.week ==  current_week  %}
-                    <td style="background-color: white;">{{ dist.points }}</td>
-                    <td style="background-color: white;">{{ dist.distance }} km</td>
-                {% endif %}
-            {% endfor %}
+    
+    {% if current_week ==5 %}
+    <tr> 
+        <td style="background-color: white;">{{ club.name }}</td>
+        {% if current_week == 0 %}
+                <td style="background-color: white;">0</td>
+                <td style="background-color: white;">0 km</td>
+            {% endif %}
+        {% for dist in club.distances_set.all %}
+            {% if dist.week ==  current_week  %}
+                <td style="background-color: white;">{{ dist.points }}</td>
+                <td style="background-color: white;">{{ dist.distance }} km</td>
+            {% endif %}
+        {% endfor %}
 
-            </td>
-            <td style="background-color: white;">{{ club.total_distance }} km</td>
-            <td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td>
-        </tr>
+        </td>
+        <td style="background-color: white;">{{ club.total_distance }} km</td>
+        <td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td>
+    </tr>
+    {% endif %}
+        
+        
     {% endfor %}
     </table>
     <div id="progressbox" style="text-align: center; position: absolute; width: 100%; left: 0; margin-top: 15px;" >
