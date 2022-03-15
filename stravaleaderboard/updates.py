@@ -47,13 +47,18 @@ def update_distances():
             club.last_update = t
             club.save()
         else:     
-            d = club.distances_set.get(week = currentWeek)
-            d.distance += newDistance
-            d.points = d.distance / club.members
-            club.currentpoints = d.points
-            d.save()
-            club.last_update = t
-            club.save()
+            try: 
+                d = club.distances_set.get(week = currentWeek)
+                d.distance += newDistance
+                d.points = d.distance / club.members
+                club.currentpoints = d.points
+                d.save()
+                club.last_update = t
+                club.save()
+            except:
+                club.save()
+
+            
     
 
 def Create_check_Clubs():
