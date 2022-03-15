@@ -16,6 +16,7 @@ def finalscore():
         for dist in d:
             points += dist.points
         club.totalPoints = points
+        club.save()
         clubScore.append(points)
         Scores.append(clubScore)
     return Scores
@@ -108,6 +109,7 @@ def update():
 
     t = int(time.time())
     club_name_list = Club.objects.all()
+    list = finalscore()
     try:
         updatetime = club_name_list[0].last_update
     except:
