@@ -33,7 +33,7 @@
             <th>Club</th>
 
             <th>Total Distance</th>
-            <th></th>
+            <th>Total Points</th>
         </tr>
     {% for club in club_name_list %}
     
@@ -53,6 +53,7 @@
 
         </td>
         <td style="background-color: white;">{{ club.total_distance }} km</td>
+        <td style="background-color: white;">{{ club.totalPoints }} km</td>
         <td style="background-color: white;"><a href="/stravaleaderboard/{{ club.name }}/" class="hover"> Weekly overview </a></td>
     </tr>
   
