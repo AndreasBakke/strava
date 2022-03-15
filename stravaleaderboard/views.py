@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from .models import Club, Distances
 from django.http import HttpResponse
-from .updates import update
+from .updates import update, finalscore
 import datetime
 import time
 
 
 # Create your views here.
 def index(request):
+    finalscore()
     update()
     club_name_list = Club.objects.all().order_by('-currentpoints')
     #template = loader.get_template('stravaleaderboard/index.html')

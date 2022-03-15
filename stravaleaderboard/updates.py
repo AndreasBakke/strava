@@ -4,6 +4,23 @@ import time
 import requests
 import json
 from decimal import Decimal
+def finalscore():
+    clubs = Club.objects.all()
+    Scores = []
+    
+    for club in clubs:
+        clubScore= []
+        clubScore.append(club.name) 
+        d = club.distances_set.all()
+        points = 0
+        for dist in d:
+            points += dist.points
+        clubScore.append(points)
+        Scores.append(clubScore)
+    
+    print(Scores)
+
+
 
 def exchange_credentials():
     a= Secret.objects.get(name = "strava")
