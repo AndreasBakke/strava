@@ -1,4 +1,4 @@
 # StravaLeaderBoard
-Closed *outdated* stravaleaderboard project.
+Closed **outdated** stravaleaderboard project.
 
 Open for inspiration only
